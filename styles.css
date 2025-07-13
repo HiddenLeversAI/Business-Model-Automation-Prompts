@@ -8,14 +8,11 @@
 :root {
     --primary-color: #0D0736;
     --secondary-color: #BDDDDF;
-    --accent-color: #0D0736;
     --background: #ffffff;
-    --surface: #f5f5f5;
     --text-primary: #222222;
     --text-secondary: #555555;
     --border: #ddd;
     --shadow: rgba(0, 0, 0, 0.1);
-    --warning-color: #dc2626;
 }
 
 body {
@@ -52,287 +49,159 @@ header h1 {
     opacity: 0.9;
 }
 
-/* Navigation */
-nav {
-    background: var(--background);
-    border-bottom: 2px solid var(--secondary-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+/* Main Content */
+main {
+    padding: 2rem 0;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    padding: 1rem 0;
-    justify-content: center;
-}
-
-nav a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    position: relative;
-}
-
-nav a:hover {
-    color: var(--secondary-color);
-}
-
-nav a:after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--secondary-color);
-    transition: width 0.3s;
-}
-
-nav a:hover:after {
-    width: 100%;
-}
-
-/* Hero Section */
-.hero {
-    padding: 4rem 0;
-    background: linear-gradient(180deg, var(--surface) 0%, var(--background) 100%);
+/* Intro Section */
+.intro {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
-.hero h2 {
+.intro h2 {
     font-family: 'Helvetica', Arial, sans-serif;
     font-size: 2rem;
-    margin-bottom: 1rem;
     color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.lead {
+.value-prop {
     font-size: 1.1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Value Props */
-.value-props {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
-
-.value-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    box-shadow: 0 2px 4px var(--shadow);
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.value-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow);
-    border-color: var(--secondary-color);
-}
-
-.value-card h3 {
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
+.revenue-range {
+    font-size: 1.1rem;
     color: var(--primary-color);
 }
 
 /* Sections */
 section {
-    padding: 3rem 0;
+    margin-bottom: 3rem;
 }
 
 section h2 {
     font-family: 'Helvetica', Arial, sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    font-size: 1.5rem;
     color: var(--primary-color);
-    position: relative;
-    padding-bottom: 1rem;
-}
-
-section h2:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: var(--secondary-color);
-}
-
-/* Prompt Cards */
-.prompt-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 2px 4px var(--shadow);
-    transition: all 0.3s ease;
-}
-
-.prompt-card:hover {
-    box-shadow: 0 4px 8px var(--shadow);
-    transform: translateY(-2px);
-}
-
-.prompt-card h3 {
-    font-family: 'Helvetica', Arial, sans-serif;
-    color: var(--primary-color);
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--secondary-color);
-}
-
-.prompt-description {
-    color: var(--text-secondary);
-    font-size: 1rem;
     margin-bottom: 1.5rem;
-    line-height: 1.7;
-}
-
-.prompt-card h4 {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
     font-weight: 600;
 }
 
-.prompt-card ul {
-    list-style: none;
-    padding-left: 0;
-    color: var(--text-secondary);
-    line-height: 1.8;
+/* Horizontal Rules */
+hr {
+    border: none;
+    height: 2px;
+    background: var(--secondary-color);
+    margin: 3rem 0;
 }
 
-.prompt-card li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.prompt-card li:before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-/* Preparation Section */
-.prep-section {
-    background: white;
-    padding: 2rem;
-    border-radius: 6px;
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-bottom: 2rem;
-    border: 1px solid var(--border);
+    background: white;
     box-shadow: 0 2px 4px var(--shadow);
-}
-
-.prep-section h3 {
-    font-family: 'Helvetica', Arial, sans-serif;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.4rem;
-}
-
-.warning {
-    background: #fef2f2;
-    border: 2px solid var(--warning-color);
     border-radius: 6px;
-    padding: 1.25rem;
-    margin-top: 1rem;
-    color: var(--warning-color);
-    font-weight: 500;
+    overflow: hidden;
 }
 
-/* CTA Section */
-.cta-section {
+thead th {
     background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
-    text-align: center;
-    padding: 4rem 0;
-}
-
-.cta-section h2 {
-    color: white;
-}
-
-.cta-section .lead {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.download-buttons {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin: 2.5rem 0;
-    flex-wrap: wrap;
-}
-
-.btn {
-    padding: 0.875rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
+    padding: 1rem;
+    text-align: left;
     font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
-.btn-primary {
-    background: white;
+tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #f8f9fa;
+    transform: scale(1.005);
+    transition: all 0.2s ease;
+}
+
+/* Table Links */
+table a {
     color: var(--primary-color);
-    border: 2px solid white;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s;
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
-    background: rgba(255, 255, 255, 0.95);
+table a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
-.btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+/* Column Sizing */
+table th:first-child,
+table td:first-child {
+    width: 35%;
 }
 
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-2px);
+table th:nth-child(2),
+table td:nth-child(2) {
+    width: 45%;
+}
+
+table th:nth-child(3),
+table td:nth-child(3) {
+    width: 20%;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Complete Reference Section */
+.complete-reference {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.complete-link {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-decoration: underline;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+.complete-link:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
 .github-link {
-    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
 }
 
 .github-link a {
-    color: white;
+    color: var(--primary-color);
     text-decoration: underline;
-    font-weight: 500;
 }
 
 .github-link a:hover {
-    text-decoration: none;
+    color: var(--secondary-color);
 }
 
 /* Footer */
@@ -342,9 +211,10 @@ footer {
     padding: 2rem 0;
     text-align: center;
     font-size: 0.9rem;
+    margin-top: 4rem;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -354,32 +224,166 @@ footer {
         font-size: 1rem;
     }
     
-    nav ul {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .hero h2 {
+    .intro h2 {
         font-size: 1.75rem;
     }
     
-    .lead {
-        font-size: 1.1rem;
+    section h2 {
+        font-size: 1.3rem;
     }
     
-    .value-props {
-        grid-template-columns: 1fr;
+    .container {
+        padding: 0 15px;
     }
     
-    .download-buttons {
-        flex-direction: column;
-        align-items: center;
+    table {
+        font-size: 0.9rem;
     }
     
-    .btn {
+    thead th,
+    tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    /* Stack table columns on mobile */
+    table th:first-child,
+    table td:first-child {
         width: 100%;
-        max-width: 300px;
     }
+    
+    table th:nth-child(2),
+    table td:nth-child(2),
+    table th:nth-child(3),
+    table td:nth-child(3) {
+        display: none;
+    }
+    
+    /* Show simplified mobile view */
+    @media (max-width: 600px) {
+        table, thead, tbody, th, td, tr {
+            display: block;
+        }
+        
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        tbody tr {
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            padding: 1rem;
+            background: white;
+        }
+        
+        tbody td {
+            border: none;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        tbody td:before {
+            content: attr(data-label) ": ";
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+    }
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    margin: 2rem 0;
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.breadcrumb a:hover {
+    color: var(--secondary-color);
+}
+
+/* Prompt Content Pages */
+.prompt-content h2 {
+    font-family: 'Helvetica', Arial, sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.prompt-box {
+    background: #f8f9fa;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    padding: 0;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.prompt-box:before {
+    content: "Click to select all text";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.prompt-box pre {
+    margin: 0;
+    padding: 2rem;
+    white-space: pre-wrap;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    background: transparent;
+    border: none;
+    overflow-x: auto;
+}
+
+.prompt-box code {
+    font-family: inherit;
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+.prompt-box:hover {
+    border-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.copy-instructions {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.copy-instructions h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.copy-instructions ol {
+    padding-left: 1.5rem;
+    line-height: 1.8;
+}
+
+.copy-instructions li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
 }
 
 /* Smooth Scrolling */
@@ -387,63 +391,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Lists in prep sections */
-.prep-section ul,
-.prep-section ol {
-    margin-left: 1.5rem;
-    line-height: 1.8;
-}
-
-.prep-section li {
-    margin-bottom: 0.75rem;
-}
-
-.prep-section strong {
-    color: var(--primary-color);
-    font-weight: 600;
-}
-
-/* Links */
-a {
-    color: var(--primary-color);
-    text-decoration: underline;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--secondary-color);
-}
-
-/* Additional styling for tables if needed */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-    background: white;
-    box-shadow: 0 2px 4px var(--shadow);
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-th {
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-}
-
-td {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border);
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-tr:hover {
-    background: var(--surface);
-    transform: scale(1.01);
-    transition: all 0.2s;
+/* Select all text on click */
+.prompt-box pre {
+    user-select: all;
 }
