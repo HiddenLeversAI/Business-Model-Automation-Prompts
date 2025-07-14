@@ -21,6 +21,22 @@ body {
     color: var(--text-primary);
     background-color: var(--background);
     font-size: 16px;
+    /* Improve mobile scrolling */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Improve touch targets for mobile */
+a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    touch-action: manipulation;
+}
+
+/* Better text selection on mobile */
+::selection {
+    background: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .container {
@@ -264,68 +280,158 @@ footer {
     color: var(--text-secondary);
 }
 
-/* Responsive Design */
+/* Mobile-First Responsive Design */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
+    /* Header adjustments */
+    header {
+        padding: 1.5rem 0;
     }
     
+    header h1 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .tagline {
+        font-size: 1rem;
+    }
+    
+    /* Typography scaling */
     .intro h2 {
         font-size: 1.5rem;
+        line-height: 1.3;
     }
     
+    .description {
+        font-size: 0.95rem;
+    }
+    
+    /* Container adjustments */
     .container {
         padding: 0 15px;
     }
     
+    main {
+        padding: 1.5rem 0;
+    }
+    
+    /* Table improvements */
     .prompt-table {
         font-size: 0.85rem;
+        margin-bottom: 1.5rem;
     }
     
     .prompt-table thead th,
     .prompt-table tbody td {
         padding: 0.75rem 0.5rem;
     }
+    
+    /* Section spacing */
+    section {
+        margin-bottom: 2rem;
+    }
 }
 
 @media (max-width: 600px) {
-    /* Hide table headers and show mobile cards */
+    /* Mobile header */
+    header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .tagline {
+        font-size: 0.9rem;
+    }
+    
+    /* Hide table headers and create mobile cards */
+    .prompt-table {
+        border: none;
+        box-shadow: none;
+    }
+    
     .prompt-table thead {
         display: none;
     }
     
+    .prompt-table tbody {
+        display: block;
+    }
+    
     .prompt-table tbody tr {
         display: block;
-        margin-bottom: 1rem;
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border: 2px solid var(--border);
+        border-radius: 8px;
+        padding: 1.25rem;
         background: white;
+        box-shadow: 0 2px 8px var(--shadow);
+    }
+    
+    .prompt-table tbody tr:hover {
+        transform: none;
+        border-color: var(--secondary-color);
     }
     
     .prompt-table tbody td {
         display: block;
         border: none;
-        padding: 0.5rem 0;
-        position: relative;
+        padding: 0.75rem 0;
         text-align: left;
     }
     
+    .prompt-table tbody td:first-child {
+        margin-bottom: 1rem;
+    }
+    
     .prompt-table tbody td:before {
-        content: attr(data-label) ": ";
+        content: attr(data-label);
         font-weight: 600;
         color: var(--primary-color);
-        display: inline-block;
-        width: 120px;
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     
     .category {
-        background: var(--secondary-color);
-        color: var(--primary-color);
-        padding: 0.5rem;
-        border-radius: 4px;
-        margin-bottom: 0.5rem;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        margin-bottom: 0.75rem;
         font-weight: 700;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    /* Mobile table links */
+    .prompt-table a {
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Extra small screens */
+    .container {
+        padding: 0 10px;
+    }
+    
+    header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .intro h2 {
+        font-size: 1.3rem;
+    }
+    
+    .prompt-table tbody tr {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .prompt-table a {
+        font-size: 1rem;
     }
 }
 
@@ -625,32 +731,164 @@ footer {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive for Guide */
+/* Mobile Responsive for All Pages */
 @media (max-width: 768px) {
+    /* Guide page grids */
     .model-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .enhancement-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .optional-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .guidelines-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
+    /* Guide content adjustments */
+    .guide-content h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem 0;
+    }
+    
+    .guide-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .guide-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .doc-card,
+    .enhancement-card,
+    .optional-card,
+    .guideline-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .critical-section {
+        padding: 1.25rem;
+    }
+    
+    /* Prompt page adjustments */
+    .prompt-box {
+        margin: 1.5rem 0;
+    }
+    
+    .prompt-box pre {
+        padding: 1.5rem;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .copy-instructions {
+        padding: 1.5rem;
+    }
+    
+    /* Next steps section */
     .prompt-links {
         flex-direction: column;
         align-items: center;
+        gap: 0.75rem;
     }
     
     .prompt-link {
         width: 100%;
         max-width: 300px;
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Extra mobile adjustments for guide */
+    .guide-content .lead {
+        font-size: 1rem;
+    }
+    
+    .warning {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .model-card,
+    .enhancement-card,
+    .optional-card {
+        padding: 1.25rem;
+    }
+    
+    .revenue-range {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    /* Prompt pages mobile */
+    .prompt-content h2 {
+        font-size: 1.4rem;
+    }
+    
+    .prompt-box:before {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+        top: 8px;
+        right: 12px;
+    }
+    
+    .prompt-box pre {
+        padding: 1.25rem;
+        font-size: 0.75rem;
+    }
+    
+    .copy-instructions h3 {
+        font-size: 1.2rem;
+    }
+    
+    .copy-instructions ol {
+        font-size: 0.9rem;
+    }
+    
+    /* Breadcrumb mobile */
+    .breadcrumb {
+        margin: 1rem 0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Very small screens */
+    .doc-card,
+    .enhancement-card,
+    .optional-card,
+    .guideline-card {
+        padding: 1rem;
+    }
+    
+    .prompt-box pre {
+        font-size: 0.7rem;
+        padding: 1rem;
+    }
+    
+    .guide-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .next-steps {
+        padding: 1.5rem;
+    }
+    
+    .prompt-link {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.9rem;
     }
 }
 
